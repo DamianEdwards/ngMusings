@@ -215,12 +215,6 @@
     <Content Include="js\app.min.js">
       <DependentUpon>app.js</DependentUpon>
     </Content>
-    <Content Include="js\controllers.js">
-      <DependentUpon>controllers.js.bundle</DependentUpon>
-    </Content>
-    <Content Include="js\controllers.min.js">
-      <DependentUpon>controllers.js.bundle</DependentUpon>
-    </Content>
     <Content Include="js\controllers\driver.js" />
     <Content Include="js\controllers\drivers.js" />
     <Content Include="js\controllers\_module.js" />
@@ -293,21 +287,7 @@
     <Content Include="js\app.min.js.map">
       <DependentUpon>app.js</DependentUpon>
     </Content>
-    <None Include="js\controllers.js.bundle" />
-    <Content Include="js\controllers.min.js.map">
-      <DependentUpon>controllers.js.bundle</DependentUpon>
-    </Content>
-    <None Include="js\services.js.bundle" />
-    <Content Include="js\services.min.js.map">
-      <DependentUpon>services.js.bundle</DependentUpon>
-    </Content>
     <None Include="js\_references.js" />
-    <Content Include="js\services.js">
-      <DependentUpon>services.js.bundle</DependentUpon>
-    </Content>
-    <Content Include="js\services.min.js">
-      <DependentUpon>services.js.bundle</DependentUpon>
-    </Content>
     <Content Include="js\services\version.js" />
     <Content Include="js\services\_module.js" />
     <Content Include="packages.config" />
@@ -365,10 +345,13 @@
     </VisualStudio>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
+       Other similar extension points exist, see Microsoft.Common.targets. -->
   <Target Name="BeforeBuild">
+  <Exec Command="powershell -NoProfile -ExecutionPolicy Bypass .\BeforeBuild.ps1" 
+           WorkingDirectory="$(ProjectDir)"
+           Condition=" '$(OS)' == 'Windows_NT'" />
   </Target>
-  <Target Name="AfterBuild">
+  <!--<Target Name="AfterBuild">
   </Target>
   -->
 </Project>

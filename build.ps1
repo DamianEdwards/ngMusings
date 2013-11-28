@@ -1,20 +1,17 @@
-try {
-    bower > $null
-} catch {
-    Write-Host "bower not found. Please ensure you've installed bower globally via npm, e.g. npm install -g bower" -ForegroundColor Red
-    Exit
+# Download nuget.exe if needed
+if(!(Test-Path .nuget\nuget.exe))
+{
+    Write-Host "Downloading NuGet.exe"
+    curl http://nuget.org/nuget.exe -outfile .nuget\nuget.exe
 }
 
-$F1DriversRoot = Join-Path $pwd "\src\F1Drivers\F1Drivers\"
+$F1DriversSlnDir = Join-Path $pwd "src\F1Drivers"
+$F1DriversProjetDir = Join-Path $F1DriversSlnDir "F1Drivers"
+$F1DriversProjectPath = Join-Path $F1DriversProjetDir "F1Drivers.csproj"
 
-# Restore bower packages
-cd $F1DriversRoot
-bower install angular
-bower install angular-route
-bower install boostrap
+# Restore nuget packages
+cd $F1DriversSlnDir
+& .\.nuget\nuget.exe restore
 
-# Bundle JS
-
-
-# Minify JS
-
+# Build the project
+msbuild $F1DriversProjectPath /m /v:quiet /nologo

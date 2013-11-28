@@ -1,4 +1,3 @@
-﻿///#source 1 1 /js/services/_module.js
 /* global angular:false */
 (function () {
     "use strict";
@@ -7,7 +6,6 @@
 
     angular.module(name, []);
 }());
-///#source 1 1 /js/services/ergastAPI.js
 /* global angular:false */
 (function () {
     "use strict";
@@ -67,8 +65,6 @@
     ]);
 
 }());
-
-///#source 1 1 /js/services/version.js
 /* global angular:false */
 (function () {
     "use strict";

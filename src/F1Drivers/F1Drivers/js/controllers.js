@@ -1,4 +1,3 @@
-﻿///#source 1 1 /js/controllers/_module.js
 /* global angular:false */
 (function () {
     "use strict";
@@ -7,7 +6,6 @@
 
     angular.module(name, []);
 }());
-///#source 1 1 /js/controllers/driver.js
 /* global angular:false */
 (function () {
     "use strict";
@@ -39,7 +37,6 @@
     ]);
 
 }());
-///#source 1 1 /js/controllers/drivers.js
 /* global angular:false */
 (function () {
     "use strict";
