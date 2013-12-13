@@ -2,6 +2,14 @@
 (function () {
     "use strict";
 
+    var name = "F1FeederApp.services";
+
+    angular.module(name, []);
+}());
+/* global angular:false */
+(function () {
+    "use strict";
+
     var servicesModule = angular.module("F1FeederApp.services"),
         serviceName = "ergastAPI";
 
@@ -67,12 +75,4 @@
     angular.module("F1FeederApp.services")
         .value(name, "0.1");
 
-}());
-/* global angular:false */
-(function () {
-    "use strict";
-
-    var name = "F1FeederApp.services";
-
-    angular.module(name, []);
 }());

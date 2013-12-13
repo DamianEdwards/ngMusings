@@ -7,7 +7,7 @@ catch {
 }
 
 # Restore bower packages
-"angular", "angular_route", "bootstrap", "jquery" | % {
+"angular", "angular-route", "bootstrap", "jquery" | % {
     bower install $_
 }
 
@@ -30,7 +30,7 @@ Get-ChildItem $jsDir -Directory | % {
     $bundleMinPath = Join-Path $jsDir "$moduleName.min.js"
     $bundleMinMapPath = Join-Path $jsDir "$moduleName.min.js.map"
 
-    $sourcePaths = (Get-ChildItem $moduleDir -Filter *.js | % { $_.FullName })
+    $sourcePaths = (Get-ChildItem $moduleDir -Filter *.js | Sort-Object | % { $_.FullName })
 
     Write-Host "Processing" $sourcePaths.Length "JS files in $moduleDir"
 
