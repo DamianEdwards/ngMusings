@@ -2,14 +2,6 @@
 (function () {
     "use strict";
 
-    var name = "F1FeederApp.controllers";
-
-    angular.module(name, []);
-}());
-/* global angular:false */
-(function () {
-    "use strict";
-
     var controllersModule = angular.module("F1FeederApp.controllers"),
         controllerName = "driver";
 
@@ -67,4 +59,12 @@
         }
     ]);
 
+}());
+/* global angular:false */
+(function () {
+    "use strict";
+
+    var name = "F1FeederApp.controllers";
+
+    angular.module(name, []);
 }());
