@@ -1,0 +1,31 @@
+﻿<div vs-ng-scope="MyApp.drivers.IDriversModel" ng-controller="MyApp.drivers.controller as model">
+    <table>
+        <caption>Drivers Championship Standings</caption>
+        <thead>
+            <tr><th>&nbsp;</th><th>Name</th><th>Team</th><th>Points</th></tr>
+            <tr>
+                <td></td>
+                <td>    
+                    <input type="text" ng-model="model.name" placeholder="name filter" />
+                </td>
+                <td>
+                    <input type="text" ng-model="model.teamName" placeholder="team name filter" />
+                </td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="driver in model.filteredDrivers()">
+                <td>{{ driver.id }}</td>
+                <td>
+                    <img ng-show="driver.image" ng-src="{{ driver.image }}" />
+                    <a ng-href="/drivers/{{ driver.id }}">
+                        {{ driver.firstName }}&nbsp;{{ driver.lastName }}
+                    </a>
+                </td>
+                <td>{{ driver.teamName }}</td>
+                <td>{{ driver.points }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
