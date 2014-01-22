@@ -1,6 +1,6 @@
 /// <reference path="md5.ts" />
 
-module MyApp.utils {
+module MyApp.Utils {
 
     export interface IGravatarService {
         /** Generates a gravatar URL from the given email address */
@@ -20,8 +20,10 @@ module MyApp.utils {
         }
     }
 
+    // #region ##Compiler generated##
     // Register the singleton with angular
-    utilsModule.factory("MyApp.utils.IGravatarService", function (): IGravatarService {
+    _module.factory("MyApp.Utils.IGravatarService", function () {
         return new GravatarService();
     });
+    // #endregion
 } 

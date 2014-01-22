@@ -4,6 +4,13 @@
         <title></title>
     </head>
     <body ng-app="MyApp">
+        <nav>
+            Choose the pattern:
+            <a href="#/drivers-$scope">Plain old $scope</a>
+            <a href="#/drivers-$scopeViewModel">$scope with a View Model</a>
+            <a href="#/drivers-controllerAs">Controller as</a>
+        </nav>
+
         <ng-view></ng-view>
 
         <script src="~/bower_components/angular/angular.js"></script>

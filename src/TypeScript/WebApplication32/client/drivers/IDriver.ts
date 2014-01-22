@@ -1,4 +1,5 @@
-module MyApp.drivers {
+module MyApp.Drivers {
+
     export interface IDriver {
         id: number;
         firstName: string;
@@ -7,4 +8,5 @@ module MyApp.drivers {
         points: number;
         image?: string;
     }
+
 } 

@@ -1,5 +1,8 @@
-module MyApp.drivers {
+module MyApp.Drivers {
 
-    export var driversModule = angular.module("MyApp.drivers", []);
+    // #region ##Compiler generated##
+    // Declare the module with angular
+    export var _module = angular.module("MyApp.Drivers", []);
+    // #endregion
 
-}  
+} 

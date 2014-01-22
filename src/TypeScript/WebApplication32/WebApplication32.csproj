@@ -21,7 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TypeScriptToolsVersion>0.9</TypeScriptToolsVersion>
-    <TypeScriptOutFile>C:\Users\dedward\Documents\visual studio 2013\Projects\WebApplication32\WebApplication32\client\app.js</TypeScriptOutFile>
+    <TypeScriptOutFile>C:\src\GitHub\DamianEdwards\ngMusings\src\TypeScript\WebApplication32\client\app.js</TypeScriptOutFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -95,7 +95,9 @@
     <Content Include="bower_components\angular-route\angular-route.min.js.map" />
     <Content Include="bower_components\angular-route\bower.json" />
     <Content Include="bower_components\angular-route\README.md" />
-    <Content Include="client\drivers\drivers.cshtml" />
+    <Content Include="client\drivers\controllerAs\drivers.cshtml" />
+    <Content Include="client\drivers\%24scope\drivers.cshtml" />
+    <Content Include="client\drivers\%24scopeViewModel\drivers.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -115,11 +117,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="client\app.ts" />
-    <TypeScriptCompile Include="client\drivers\drivers.ts" />
+    <TypeScriptCompile Include="client\startup.ts" />
+    <TypeScriptCompile Include="client\drivers\%24scopeViewModel\Drivers.ts" />
+    <TypeScriptCompile Include="client\drivers\%24scopeViewModel\IDriversScope.ts" />
+    <TypeScriptCompile Include="client\drivers\%24scopeViewModel\_module.ts" />
+    <TypeScriptCompile Include="client\drivers\%24scope\Drivers.ts" />
+    <TypeScriptCompile Include="client\drivers\DriversService.ts" />
     <TypeScriptCompile Include="client\drivers\IDriver.ts" />
     <TypeScriptCompile Include="client\drivers\IDriverRouteParams.ts" />
-    <TypeScriptCompile Include="client\drivers\IDriversModel.ts" />
+    <TypeScriptCompile Include="client\drivers\%24scope\IDriversScope.ts" />
+    <TypeScriptCompile Include="client\drivers\%24scope\_module.ts" />
+    <TypeScriptCompile Include="client\drivers\IDriversService.ts" />
+    <TypeScriptCompile Include="client\drivers\controllerAs\Drivers.ts" />
+    <TypeScriptCompile Include="client\drivers\controllerAs\IDriversModel.ts" />
+    <TypeScriptCompile Include="client\drivers\controllerAs\_module.ts" />
     <TypeScriptCompile Include="client\drivers\_module.ts" />
     <TypeScriptCompile Include="client\utils\gravatar.ts" />
     <TypeScriptCompile Include="client\utils\md5.ts" />

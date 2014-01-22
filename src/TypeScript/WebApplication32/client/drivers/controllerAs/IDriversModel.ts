@@ -1,10 +1,10 @@
-module MyApp.drivers {
+module MyApp.Drivers.ControllerAs {
 
     export interface IDriversModel {
         drivers: Array<IDriver>;
         name: string;
         teamName: string;
-        filteredDrivers() : Array<IDriver>
+        driverFilter: (d: IDriver) => boolean;
     }
 
 } 

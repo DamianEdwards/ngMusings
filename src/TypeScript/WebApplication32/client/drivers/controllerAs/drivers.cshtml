@@ -1,4 +1,6 @@
-﻿<div vs-ng-scope="MyApp.drivers.IDriversModel" ng-controller="MyApp.drivers.controller as model">
+﻿<div ng-controller="MyApp.Drivers.ControllerAs.DriversController as model">
+    <h2>Controller as</h2>
+
     <table>
         <caption>Drivers Championship Standings</caption>
         <thead>
@@ -15,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="driver in model.filteredDrivers()">
+            <tr ng-repeat="driver in model.drivers | filter: model.driverFilter">
                 <td>{{ driver.id }}</td>
                 <td>
                     <img ng-show="driver.image" ng-src="{{ driver.image }}" />

@@ -4,7 +4,7 @@
 *  http://www.webtoolkit.info/
 *
 **/
-module MyApp.utils {
+module MyApp.Utils {
 
     // This is an example of a function that's just compiled into the namespace via TS rather than being
     // registered with and then injected by angular.

@@ -1,5 +1,8 @@
-module MyApp.utils {
+module MyApp.Utils {
 
-    export var utilsModule = angular.module("MyApp.utils", []);
+    // #region ##Compiler generated##
+    // Register the module with angular
+    export var _module = angular.module("MyApp.Utils", []);
+    // #endregion
 
 } 
