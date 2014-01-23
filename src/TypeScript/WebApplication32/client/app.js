@@ -475,10 +475,8 @@ var MyApp;
         })();
 
         // #region ##Compiler generated##
-        // Register the singleton with angular
-        MyApp.Utils._module.factory("MyApp.Utils.IGravatarService", function () {
-            return new GravatarService();
-        });
+        // Register the service with angular
+        MyApp.Utils._module.service("MyApp.Utils.IGravatarService", GravatarService);
     })(MyApp.Utils || (MyApp.Utils = {}));
     var Utils = MyApp.Utils;
 })(MyApp || (MyApp = {}));

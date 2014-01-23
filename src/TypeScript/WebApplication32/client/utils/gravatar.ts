@@ -21,9 +21,7 @@ module MyApp.Utils {
     }
 
     // #region ##Compiler generated##
-    // Register the singleton with angular
-    _module.factory("MyApp.Utils.IGravatarService", function () {
-        return new GravatarService();
-    });
+    // Register the service with angular
+    _module.service("MyApp.Utils.IGravatarService", GravatarService);
     // #endregion
 } 
