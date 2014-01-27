@@ -1,0 +1,8 @@
+{
+    "name": "WebApplication32",
+    "dependencies": {
+        "angular": "~1.2.10",
+        "angular-route": "~1.2.10",
+        "dt-angular": "~1.2.0"
+  }
+}

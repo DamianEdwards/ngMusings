@@ -84,6 +84,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bower_components\dt-angular\.gitignore" />
+    <Content Include="Gruntfile.js" />
     <Content Include="index.cshtml" />
     <Content Include="packages.config" />
     <Content Include="bower_components\angular\.bower.json" />
@@ -98,6 +100,14 @@
     <Content Include="client\drivers\controllerAs\drivers.cshtml" />
     <Content Include="client\drivers\%24scope\drivers.cshtml" />
     <Content Include="client\drivers\%24scopeViewModel\drivers.cshtml" />
+    <Content Include="bower_components\dt-angular\.bower.json" />
+    <Content Include="bower_components\dt-angular\bower.json" />
+    <Content Include="bower_components\dt-angular\README.md" />
+    <Content Include="bower_components\dt-jquery\.bower.json" />
+    <Content Include="bower_components\dt-jquery\bower.json" />
+    <Content Include="bower_components\dt-jquery\README.md" />
+    <Content Include="bower.json" />
+    <Content Include="local.bowerrc" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,12 +121,21 @@
     <Content Include="bower_components\angular\angular-csp.css" />
     <Content Include="bower_components\angular\angular.js" />
     <Content Include="bower_components\angular\angular.min.js" />
+    <None Include="package.json" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="bower_components\dt-angular\angular-cookies.d.ts" />
+    <TypeScriptCompile Include="bower_components\dt-angular\angular-mocks.d.ts" />
+    <TypeScriptCompile Include="bower_components\dt-angular\angular-resource.d.ts" />
+    <TypeScriptCompile Include="bower_components\dt-angular\angular-route.d.ts" />
+    <TypeScriptCompile Include="bower_components\dt-angular\angular-sanitize.d.ts" />
+    <TypeScriptCompile Include="bower_components\dt-angular\angular-scenario.d.ts" />
+    <TypeScriptCompile Include="bower_components\dt-angular\angular.d.ts" />
+    <TypeScriptCompile Include="bower_components\dt-jquery\jquery.d.ts" />
     <TypeScriptCompile Include="client\startup.ts" />
     <TypeScriptCompile Include="client\drivers\%24scopeViewModel\Drivers.ts" />
     <TypeScriptCompile Include="client\drivers\%24scopeViewModel\IDriversScope.ts" />
@@ -134,14 +153,6 @@
     <TypeScriptCompile Include="client\drivers\_module.ts" />
     <TypeScriptCompile Include="client\utils\gravatar.ts" />
     <TypeScriptCompile Include="client\utils\md5.ts" />
-    <TypeScriptCompile Include="client\typings\angularjs\angular-cookies.d.ts" />
-    <TypeScriptCompile Include="client\typings\angularjs\angular-mocks.d.ts" />
-    <TypeScriptCompile Include="client\typings\angularjs\angular-resource.d.ts" />
-    <TypeScriptCompile Include="client\typings\angularjs\angular-route.d.ts" />
-    <TypeScriptCompile Include="client\typings\angularjs\angular-sanitize.d.ts" />
-    <TypeScriptCompile Include="client\typings\angularjs\angular-scenario.d.ts" />
-    <TypeScriptCompile Include="client\typings\angularjs\angular.d.ts" />
-    <TypeScriptCompile Include="client\typings\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="client\utils\_module.ts" />
   </ItemGroup>
   <PropertyGroup>

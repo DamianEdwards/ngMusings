@@ -110,3 +110,6 @@ UpgradeLog*.XML
 
 # Bower Components
 bower_components
+
+# Node Modules
+node_modules

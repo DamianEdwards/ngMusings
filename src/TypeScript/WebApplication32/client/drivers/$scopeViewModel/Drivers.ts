@@ -1,3 +1,5 @@
+/// <reference path="_module.ts" />
+
 module MyApp.Drivers.UsingScopeViewModel {
    
     class DriversController {

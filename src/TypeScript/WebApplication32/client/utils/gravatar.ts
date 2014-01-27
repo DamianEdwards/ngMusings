@@ -1,3 +1,4 @@
+/// <reference path="_module.ts" />
 /// <reference path="md5.ts" />
 
 module MyApp.Utils {
