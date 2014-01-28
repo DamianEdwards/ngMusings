@@ -1,14 +1,18 @@
 @ECHO OFF
 cd %~dp0
 
-:: Server
+ECHO Restoring NPM packages
+CALL npm install
 
-IF EXIST .nuget\NuGet.exe goto start
-echo Downloading latest version of NuGet.exe...
+ECHO Installing Bower components
+CALL bower install
+
+IF EXIST .nuget\NuGet.exe GOTO NuGetPresent
+ECHO Downloading latest version of NuGet.exe...
 mkdir .nuget
 @powershell -NoProfile -ExecutionPolicy unrestricted -Command "((new-object net.webclient).DownloadFile('https://nuget.org/nuget.exe', '.nuget\NuGet.exe'))"
 
-:start
+:NuGetPresent
 
 SET EnableNuGetPackageRestore=true
 
@@ -17,14 +21,6 @@ ECHO Restoring NuGet packages
 
 ECHO Build the csproj
 msbuild WebApplication32.csproj
-
-:: Client
-
-ECHO Restoring NPM packages
-CALL npm install
-
-ECHO Installing Bower components
-CALL bower install
 
 ECHO Building client assets via Grunt
 CALL grunt
