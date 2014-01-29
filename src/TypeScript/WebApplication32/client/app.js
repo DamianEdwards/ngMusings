@@ -1,52 +1,48 @@
+/// <reference path="../bower_components/dt-angular/angular.d.ts" />
+/// <reference path="../bower_components/dt-angular/angular-route.d.ts" />
 var MyApp;
 (function (MyApp) {
-    (function (Drivers) {
-        (function (UsingScope) {
-            UsingScope._module = angular.module("MyApp.Drivers.UsingScope", []);
-        })(Drivers.UsingScope || (Drivers.UsingScope = {}));
-        var UsingScope = Drivers.UsingScope;
-    })(MyApp.Drivers || (MyApp.Drivers = {}));
-    var Drivers = MyApp.Drivers;
-})(MyApp || (MyApp = {}));
-var MyApp;
-(function (MyApp) {
-    (function (Drivers) {
-        (function (UsingScope) {
-            var DriversController = (function () {
-                function DriversController($scope, routeParams, driversService) {
-                    $scope.teamName = routeParams.teamName;
-                    $scope.name = "";
-                    $scope.drivers = driversService.getAllDrivers();
-                    $scope.driverFilter = function (driver) {
-                        var nameRx = new RegExp($scope.name, "i"), teamNameRx = new RegExp($scope.teamName, "i");
+    var Startup = (function () {
+        function Startup(routeProvider) {
+            this._routeProvider = routeProvider;
+        }
+        Startup.prototype.configuration = function () {
+            this._routeProvider.when("/drivers-$scope", { templateUrl: "drivers/DetailsTemplate?pattern=$scope" }).when("/drivers-$scopeViewModel", { templateUrl: "drivers/DetailsTemplate?pattern=$scopeViewModel" }).when("/drivers-controllerAs", { templateUrl: "drivers/DetailsTemplate?pattern=controllerAs" }).otherwise({ redirectTo: "/drivers-$scope" });
+        };
+        return Startup;
+    })();
 
-                        return (!$scope.teamName || teamNameRx.test(driver.teamName)) && (!$scope.name || nameRx.test(driver.firstName + " " + driver.lastName));
-                    };
-                }
-                return DriversController;
-            })();
+    // #region ##Compiler generated##
+    // Register the application module with AngularJS
+    var _app = angular.module("MyApp", [
+        "ngRoute",
+        "MyApp.Drivers",
+        "MyApp.Drivers.UsingScope",
+        "MyApp.Drivers.UsingScopeViewModel",
+        "MyApp.Drivers.ControllerAs",
+        "MyApp.Utils"
+    ]);
 
-            MyApp.Drivers.UsingScope._module.controller("MyApp.Drivers.UsingScope.DriversController", [
-                "$scope",
-                "$routeParams",
-                "MyApp.Drivers.IDriversService",
-                DriversController
-            ]);
-        })(Drivers.UsingScope || (Drivers.UsingScope = {}));
-        var UsingScope = Drivers.UsingScope;
-    })(MyApp.Drivers || (MyApp.Drivers = {}));
-    var Drivers = MyApp.Drivers;
+    _app.config([
+        "$routeProvider",
+        function ($routeProvider) {
+            new Startup($routeProvider).configuration();
+        }
+    ]);
 })(MyApp || (MyApp = {}));
 var MyApp;
 (function (MyApp) {
     (function (Drivers) {
         (function (UsingScopeViewModel) {
+            // #region ##Compiler generated##
+            // Declare the module with angular
             UsingScopeViewModel._module = angular.module("MyApp.Drivers.UsingScopeViewModel", []);
         })(Drivers.UsingScopeViewModel || (Drivers.UsingScopeViewModel = {}));
         var UsingScopeViewModel = Drivers.UsingScopeViewModel;
     })(MyApp.Drivers || (MyApp.Drivers = {}));
     var Drivers = MyApp.Drivers;
 })(MyApp || (MyApp = {}));
+/// <reference path="_module.ts" />
 var MyApp;
 (function (MyApp) {
     (function (Drivers) {
@@ -71,6 +67,8 @@ var MyApp;
                 return DriversController;
             })();
 
+            // #region ##Compiler generated##
+            // Register the controller with angular
             MyApp.Drivers.UsingScopeViewModel._module.controller("MyApp.Drivers.UsingScopeViewModel.DriversController", [
                 "$scope",
                 "$routeParams",
@@ -85,10 +83,57 @@ var MyApp;
 var MyApp;
 (function (MyApp) {
     (function (Drivers) {
+        (function (UsingScope) {
+            // #region ##Compiler generated##
+            // Declare the module with angular
+            UsingScope._module = angular.module("MyApp.Drivers.UsingScope", []);
+        })(Drivers.UsingScope || (Drivers.UsingScope = {}));
+        var UsingScope = Drivers.UsingScope;
+    })(MyApp.Drivers || (MyApp.Drivers = {}));
+    var Drivers = MyApp.Drivers;
+})(MyApp || (MyApp = {}));
+/// <reference path="_module.ts" />
+var MyApp;
+(function (MyApp) {
+    (function (Drivers) {
+        (function (UsingScope) {
+            var DriversController = (function () {
+                function DriversController($scope, routeParams, driversService) {
+                    $scope.teamName = routeParams.teamName;
+                    $scope.name = "";
+                    $scope.drivers = driversService.getAllDrivers();
+                    $scope.driverFilter = function (driver) {
+                        var nameRx = new RegExp($scope.name, "i"), teamNameRx = new RegExp($scope.teamName, "i");
+
+                        return (!$scope.teamName || teamNameRx.test(driver.teamName)) && (!$scope.name || nameRx.test(driver.firstName + " " + driver.lastName));
+                    };
+                }
+                return DriversController;
+            })();
+
+            // #region ##Compiler generated##
+            // Register the controller with angular
+            MyApp.Drivers.UsingScope._module.controller("MyApp.Drivers.UsingScope.DriversController", [
+                "$scope",
+                "$routeParams",
+                "MyApp.Drivers.IDriversService",
+                DriversController
+            ]);
+        })(Drivers.UsingScope || (Drivers.UsingScope = {}));
+        var UsingScope = Drivers.UsingScope;
+    })(MyApp.Drivers || (MyApp.Drivers = {}));
+    var Drivers = MyApp.Drivers;
+})(MyApp || (MyApp = {}));
+var MyApp;
+(function (MyApp) {
+    (function (Drivers) {
+        // #region ##Compiler generated##
+        // Declare the module with angular
         Drivers._module = angular.module("MyApp.Drivers", []);
     })(MyApp.Drivers || (MyApp.Drivers = {}));
     var Drivers = MyApp.Drivers;
 })(MyApp || (MyApp = {}));
+/// <reference path="_module.ts" />
 var MyApp;
 (function (MyApp) {
     (function (Drivers) {
@@ -115,6 +160,8 @@ var MyApp;
             return DriversService;
         })();
 
+        // #region ##Compiler generated##
+        // Register the service with angular
         MyApp.Drivers._module.service("MyApp.Drivers.IDriversService", ["MyApp.Utils.IGravatarService", DriversService]);
     })(MyApp.Drivers || (MyApp.Drivers = {}));
     var Drivers = MyApp.Drivers;
@@ -123,12 +170,15 @@ var MyApp;
 (function (MyApp) {
     (function (Drivers) {
         (function (ControllerAs) {
+            // #region ##Compiler generated##
+            // Declare the module with angular
             ControllerAs._module = angular.module("MyApp.Drivers.ControllerAs", []);
         })(Drivers.ControllerAs || (Drivers.ControllerAs = {}));
         var ControllerAs = Drivers.ControllerAs;
     })(MyApp.Drivers || (MyApp.Drivers = {}));
     var Drivers = MyApp.Drivers;
 })(MyApp || (MyApp = {}));
+/// <reference path="_module.ts" />
 var MyApp;
 (function (MyApp) {
     (function (Drivers) {
@@ -141,7 +191,15 @@ var MyApp;
 
                     model.drivers = driversService.getAllDrivers();
 
-                    model.driverFilter = this.driverFilter.bind(this);
+                    // #region ##Compiler generated##
+                    //         Capture the instance for each public method as 'this'
+                    model.driverFilter = this.driverFilter.bind(this); // This is ES5 only
+                    //var tempF = model.driverFilter; // For ES3
+                    //var tempThis = this;
+                    //model.driverFilter = function (d) {
+                    //    return tempF.apply(tempThis, [d]);
+                    //};
+                    // #endregion
                 }
                 DriversController.prototype.driverFilter = function (driver) {
                     var nameRx = new RegExp(this.name, "i"), teamNameRx = new RegExp(this.teamName, "i");
@@ -151,6 +209,8 @@ var MyApp;
                 return DriversController;
             })();
 
+            // #region ##Compiler generated##
+            // Register the controller with angular
             MyApp.Drivers.ControllerAs._module.controller("MyApp.Drivers.ControllerAs.DriversController", [
                 "$routeParams",
                 "MyApp.Drivers.IDriversService",
@@ -163,42 +223,25 @@ var MyApp;
 })(MyApp || (MyApp = {}));
 var MyApp;
 (function (MyApp) {
-    var Startup = (function () {
-        function Startup(routeProvider) {
-            this._routeProvider = routeProvider;
-        }
-        Startup.prototype.configuration = function () {
-            this._routeProvider.when("/drivers-$scope", { templateUrl: "client/drivers/$scope/drivers.cshtml" }).when("/drivers-$scopeViewModel", { templateUrl: "client/drivers/$scopeViewModel/drivers.cshtml" }).when("/drivers-controllerAs", { templateUrl: "client/drivers/controllerAs/drivers.cshtml" }).otherwise({ redirectTo: "/drivers-$scope" });
-        };
-        return Startup;
-    })();
-
-    var _app = angular.module("MyApp", [
-        "ngRoute",
-        "MyApp.Drivers",
-        "MyApp.Drivers.UsingScope",
-        "MyApp.Drivers.UsingScopeViewModel",
-        "MyApp.Drivers.ControllerAs",
-        "MyApp.Utils"
-    ]);
-
-    _app.config([
-        "$routeProvider",
-        function ($routeProvider) {
-            new Startup($routeProvider).configuration();
-        }
-    ]);
-})(MyApp || (MyApp = {}));
-var MyApp;
-(function (MyApp) {
     (function (Utils) {
+        // #region ##Compiler generated##
+        // Register the module with angular
         Utils._module = angular.module("MyApp.Utils", []);
     })(MyApp.Utils || (MyApp.Utils = {}));
     var Utils = MyApp.Utils;
 })(MyApp || (MyApp = {}));
 var MyApp;
 (function (MyApp) {
+    /**
+    *
+    *  MD5 (Message-Digest Algorithm)
+    *  http://www.webtoolkit.info/
+    *
+    **/
     (function (Utils) {
+        // This is an example of a function that's just compiled into the namespace via TS rather than being
+        // registered with and then injected by angular.
+        /** Returns the MD5 hash of the given string. */
         function MD5(input) {
             function RotateLeft(lValue, iShiftBits) {
                 return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
@@ -419,6 +462,8 @@ var MyApp;
     })(MyApp.Utils || (MyApp.Utils = {}));
     var Utils = MyApp.Utils;
 })(MyApp || (MyApp = {}));
+/// <reference path="_module.ts" />
+/// <reference path="md5.ts" />
 var MyApp;
 (function (MyApp) {
     (function (Utils) {
@@ -434,7 +479,10 @@ var MyApp;
             return GravatarService;
         })();
 
+        // #region ##Compiler generated##
+        // Register the service with angular
         MyApp.Utils._module.service("MyApp.Utils.IGravatarService", GravatarService);
     })(MyApp.Utils || (MyApp.Utils = {}));
     var Utils = MyApp.Utils;
 })(MyApp || (MyApp = {}));
+//# sourceMappingURL=app.js.map

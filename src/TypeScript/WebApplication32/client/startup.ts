@@ -12,9 +12,9 @@ module MyApp {
 
         public configuration() {
             this._routeProvider
-                .when("/drivers-$scope", { templateUrl: "client/drivers/$scope/drivers.cshtml" })
-                .when("/drivers-$scopeViewModel", { templateUrl: "client/drivers/$scopeViewModel/drivers.cshtml" })
-                .when("/drivers-controllerAs", { templateUrl: "client/drivers/controllerAs/drivers.cshtml" })
+                .when("/drivers-$scope", { templateUrl: "drivers/DetailsTemplate?pattern=$scope" })
+                .when("/drivers-$scopeViewModel", { templateUrl: "drivers/DetailsTemplate?pattern=$scopeViewModel" })
+                .when("/drivers-controllerAs", { templateUrl: "drivers/DetailsTemplate?pattern=controllerAs" })
                 .otherwise({ redirectTo: "/drivers-$scope" });
         }
     }

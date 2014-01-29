@@ -17,7 +17,7 @@
             },
             dist: {
                 files: {
-                    'client/app.min.js': ['<%= typescript.base.dest %>']
+                    'public/app.min.js': ['<%= typescript.base.dest %>']
                 }
             }
         },
@@ -36,10 +36,29 @@
         //        }
         //    }
         //},
+        clean: ["public"],
+        copy: {
+            main: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: "client/",
+                        src: "**/*.{js,css,map,html,htm,jpg,jpeg,png,gif,eot,svg,ttf,woff}",
+                        dest: "public/"
+                    },
+                    {
+                        expand: true,
+                        cwd: "bower_components/",
+                        src: "**/*.{js,css,map,html,htm,jpg,jpeg,png,gif,eot,svg,ttf,woff}",
+                        dest: "public/"
+                    }
+                ]
+            }
+        },
         typescript: {
             base: {
-                src: ['**/*.ts'],
-                dest: 'client/app.js',
+                src: ['client/**/*.ts'],
+                dest: 'public/app.js',
                 options: {
                     module: 'amd', // or commonjs
                     target: 'es5', // or es3
@@ -48,8 +67,8 @@
             }
         },
         watch: {
-            files: ['<%= typescript.base.src %>'],
-            tasks: ['typescript']
+            files: ['client/**/*.*', 'bower_components/**/*.{js,css,map,html,htm,jpg,jpeg,png,gif,eot,svg,ttf,woff}'],
+            tasks: ['build']
         }
     });
 
@@ -58,10 +77,13 @@
     //grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
     //grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-typescript');
 
     //grunt.registerTask('test', ['jshint', 'qunit']);
 
-    grunt.registerTask('default', ['typescript', 'uglify']);
+    grunt.registerTask('build', ['clean', 'typescript', 'uglify', 'copy']);
+    grunt.registerTask('default', ['build', 'watch']);
 
 };

@@ -42,9 +42,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -58,6 +68,10 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.0.0\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.0.0\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,8 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="bower_components\dt-angular\.gitignore" />
+    <Content Include="client\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Gruntfile.js" />
-    <Content Include="index.cshtml" />
+    <Content Include="Views\Drivers\Index.cshtml" />
     <Content Include="packages.config" />
     <Content Include="bower_components\angular\.bower.json" />
     <Content Include="bower_components\angular\angular.min.js.gzip" />
@@ -97,9 +112,9 @@
     <Content Include="bower_components\angular-route\angular-route.min.js.map" />
     <Content Include="bower_components\angular-route\bower.json" />
     <Content Include="bower_components\angular-route\README.md" />
-    <Content Include="client\drivers\controllerAs\drivers.cshtml" />
-    <Content Include="client\drivers\%24scope\drivers.cshtml" />
-    <Content Include="client\drivers\%24scopeViewModel\drivers.cshtml" />
+    <Content Include="Views\Drivers\controllerAs\Details.cshtml" />
+    <Content Include="Views\Drivers\%24scope\Details.cshtml" />
+    <Content Include="Views\Drivers\%24scopeViewModel\Details.cshtml" />
     <Content Include="bower_components\dt-angular\.bower.json" />
     <Content Include="bower_components\dt-angular\bower.json" />
     <Content Include="bower_components\dt-angular\README.md" />
@@ -108,6 +123,13 @@
     <Content Include="bower_components\dt-jquery\README.md" />
     <Content Include="bower.json" />
     <Content Include="local.bowerrc" />
+    <Content Include="client\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="client\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="client\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -125,7 +147,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DriversController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="bower_components\dt-angular\angular-cookies.d.ts" />
@@ -154,6 +178,10 @@
     <TypeScriptCompile Include="client\utils\gravatar.ts" />
     <TypeScriptCompile Include="client\utils\md5.ts" />
     <TypeScriptCompile Include="client\utils\_module.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
