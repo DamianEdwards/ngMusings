@@ -12,7 +12,7 @@ module MyApp {
 
         public configuration() {
             this._routeProvider
-                .when("/drivers-$scope", { templateUrl: "drivers/DetailsTemplate?pattern=$scope" })
+                .when("/drivers-$scope", { templateUrl: "public/drivers/$scope/Details.html" })
                 .when("/drivers-$scopeViewModel", { templateUrl: "drivers/DetailsTemplate?pattern=$scopeViewModel" })
                 .when("/drivers-controllerAs", { templateUrl: "drivers/DetailsTemplate?pattern=controllerAs" })
                 .otherwise({ redirectTo: "/drivers-$scope" });
